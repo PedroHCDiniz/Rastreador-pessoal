@@ -89,15 +89,17 @@ export const useAuth = () => {
   };
 
   const signOut = async () => {
-    const { error } = await supabase.auth.signOut();
-    if (error) {
-      toast({
-        variant: "destructive",
-        title: "Erro ao sair",
-        description: error.message,
-      });
-    }
-  };
+  const { error } = await supabase.auth.signOut();
+  if (error) {
+    toast({
+      variant: "destructive",
+      title: "Erro ao sair",
+      description: error.message,
+    });
+  } else {
+    window.location.href = '/auth'; // Adicione esta linha
+  }
+};
 
   return {
     user,

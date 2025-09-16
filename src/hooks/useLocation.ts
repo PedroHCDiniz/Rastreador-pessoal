@@ -70,7 +70,7 @@ export const useLocation = (userId: string | undefined, isTracking: boolean = fa
         {
           enableHighAccuracy: true,
           timeout: 10000,
-          maximumAge: 30000,
+          maximumAge: 0,
         }
       );
     });
